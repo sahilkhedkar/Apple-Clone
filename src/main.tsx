@@ -16,8 +16,6 @@ Sentry.init({
   sendDefaultPii: true,
   integrations: [
     Sentry.browserTracingIntegration(),
-    //@ts-ignore
-    Sentry.metrics.metricsAggregatorIntegration(),
     Sentry.reactRouterV6BrowserTracingIntegration({
       useEffect,
       useLocation,
