@@ -157,7 +157,6 @@ const VideoCarousel = () => {
     }
   };
 
-
   //@ts-ignore
   const handleLoadedMetaData = (i, e) => setLoadedData((pre) => [...pre, e]);
 
@@ -181,8 +180,8 @@ const VideoCarousel = () => {
                   onEnded={() =>
                     i !== 3
                       ? handleProcess("video-end", i)
-                      //@ts-ignore
-                      : handleProcess("video-last")
+                      : //@ts-ignore
+                        handleProcess("video-last")
                   }
                   onPlay={() =>
                     setVideo((pre) => ({ ...pre, isPlaying: true }))
@@ -229,13 +228,13 @@ const VideoCarousel = () => {
             alt={isLastVideo ? "replay" : !isPlaying ? "play" : "pause"}
             onClick={
               isLastVideo
-              //@ts-ignore
-                ? () => handleProcess("video-reset")
+                ? //@ts-ignore
+                  () => handleProcess("video-reset")
                 : !isPlaying
-                //@ts-ignore
-                ? () => handleProcess("play")
-                //@ts-ignore
-                : () => handleProcess("pause")
+                ? //@ts-ignore
+                  () => handleProcess("play")
+                : //@ts-ignore
+                  () => handleProcess("pause")
             }
           />
         </button>
