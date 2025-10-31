@@ -1,10 +1,12 @@
 import { useGSAP } from '@gsap/react'
+// @ts-ignore
 import React, { useRef } from 'react'
 import { animateWithGsap } from '../utils/animations';
 import { explore1Img, explore2Img, exploreVideo } from '../utils';
 import gsap from 'gsap';
 
 const Features = () => {
+// @ts-ignore
   const videoRef = useRef();
 
   useGSAP(() => {
@@ -15,16 +17,20 @@ const Features = () => {
         start: '-10% bottom',
       },
       onComplete: () => {
+// @ts-ignore
         videoRef.current.play();
       }
     })
 
+// @ts-ignore
     animateWithGsap('#features_title', { y:0, opacity:1})
+// @ts-ignore
     animateWithGsap(
       '.g_grow',
       { scale: 1, opacity: 1, ease: 'power1' },
       { scrub: 5.5 }
     );
+// @ts-ignore
     animateWithGsap(
       '.g_text',
       {y:0, opacity: 1,ease: 'power2.inOut',duration: 1}
@@ -46,7 +52,9 @@ const Features = () => {
 
           <div className="flex-center flex-col sm:px-10">
             <div className="relative h-[50vh] w-full flex items-center">
-              <video playsInline id="exploreVideo" className="w-full h-full object-cover object-center" preload="none" muted autoPlay ref={videoRef}>
+              <video playsInline id="exploreVideo" className="w-full h-full object-cover object-center" preload="none" muted autoPlay
+              //@ts-ignore
+              ref={videoRef}>
                 <source src={exploreVideo} type="video/mp4" />
               </video>
             </div>
